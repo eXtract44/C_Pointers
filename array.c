@@ -1,7 +1,4 @@
-
-
-
-
+/********************************************************************************************************************************/
 int sumArray(int* array,int size){ 
   int sum = 0;
   if(size < 0){return 0;}
@@ -10,6 +7,7 @@ int sumArray(int* array,int size){
   }
 return sum;
 }
+/********************************************************************************************************************************/
 int multiplyArray(int* array,int size){
   int multiply = 0;
   if(size < 0){return 0;}
@@ -18,6 +16,7 @@ int multiplyArray(int* array,int size){
   }
 return sum;
 }
+/********************************************************************************************************************************/
 bool findIfKeyInArray(int* array,int size,int key){
   if(size < 0){return 0;}
   for(int i = 0;i<size;i++){
@@ -27,6 +26,7 @@ bool findIfKeyInArray(int* array,int size,int key){
   }
   return 0;
 }
+/********************************************************************************************************************************/
 int findMaxValueInArray(int* array,int size){
   int temp_data = 0;
   if(size < 0){return 0;}
@@ -36,6 +36,17 @@ int findMaxValueInArray(int* array,int size){
   }
   return temp_data;
 }
-
-
-
+/********************************************************************************************************************************/
+void findMinMaxValueInArray(int* array,int size, int *min, int*max){
+ *min = array[0];
+ *max = array[0];
+  for(int i = 1;i<size;i++){
+      if(array[i] < *min){
+          *min=array[i];
+      }
+      if(array[i] > *max){
+          *max=array[i];
+      }
+    }
+}
+/********************************************************************************************************************************/
