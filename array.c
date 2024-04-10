@@ -49,4 +49,11 @@ void findMinMaxValueInArray(int* array,int size, int *min, int*max){
       }
     }
 }
+findMinMaxValueInArray(array,size,&min,&max);
 /********************************************************************************************************************************/
+void updateAverage(void *a, void* b){
+ *a = (a* + *b) / 2;
+*a=*b;
+}
+
+
