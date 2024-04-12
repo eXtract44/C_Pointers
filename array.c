@@ -72,7 +72,7 @@ void findMinMaxValueInArray(int* array,int size, int *min, int*max){
 findMinMaxValueInArray(array,size,&min,&max);
 /********************************************************************************************************************************/
 int findIfSumNeighborns(int* array,int size){
-  for(int i = 1;i<size;i++){
+  for(int i = 1;i<size-1;i++){
       printf("iter:%d \n", i);
       printf("array[sum]:%d \n", array[i]);
       printf("array[add1]:%d \n", array[i-1]);
@@ -90,6 +90,24 @@ int main() {
     int arr[SIZE]= {1,3,7,8,5,11,7,8,17,10};
     // Write C code here
     printf("findIfSumNeighborns:%d", findIfSumNeighborns(arr,SIZE));
+
+    return 0;
+}
+/********************************************************************************************************************************/
+int checkReallySorted(int* array,int size){
+  for(int i = 1;i<size-1;i++){
+      if(array[i] >= array[i+1]){
+          return 0;
+      }
+      
+    }
+    return 1;
+}
+#define SIZE 5
+int main() {
+    int arr[SIZE]= {1,2,7,8,10};
+    // Write C code here
+    printf("findIfSumNeighborns:%d", checkReallySorted(arr,SIZE));
 
     return 0;
 }
