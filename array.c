@@ -111,3 +111,30 @@ int main() {
 
     return 0;
 }
+/********************************************************************************************************************************/
+void swapChar(char* ptr1, char* ptr2){
+char temp = *ptr1;
+  *ptr1 = *ptr2;
+  *ptr2= temp;  
+}
+void reverseArrayIterative(char* arr, int size){
+  for(int i = 0; i < size/2;i++){
+    swapChar(arr[i],arr[size-1-i];
+  }
+}
+void reverseArrayRecursive(char* arr, int size){
+  if(size > 1){
+    swapChar(arr[i],arr[size-1-i];
+    reverseArrayRecursive(arr + 1, size - 2);
+  }
+}
+/********************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
