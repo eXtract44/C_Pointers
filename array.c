@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 int sumArray(int *array, int size)
 {
   int sum = 0;
@@ -25,7 +24,7 @@ int multiplyArray(int *array, int size)
   {
     multiply = multiply * array[i];
   }
-  return sum;
+  return multiply;
 }
 int findIfKeyInArray(int *array, int size, int key)
 {
@@ -114,27 +113,40 @@ void reverseArrayIterative(char *arr, int size)
 {
   for (int i = 0; i < size / 2; i++)
   {
-    swapChar(arr[i],arr[size-1-i];
+    swapChar(arr[i], arr[size - 1 - i]);
   }
 }
 void reverseArrayRecursive(char *arr, int size)
 {
   if (size > 1)
   {
-    swapChar(arr[size],arr[size-1]);
+    swapChar(arr[size], arr[size - 1]);
     reverseArrayRecursive(arr + 1, size - 2);
   }
 }
-int findSecondSmallValue(int *array, int size)
+void findSecondSmallValue(int *array, int size)
 {
-  int temp_data = 0;
-  if (size < 0)
+  int smallValue = array[0];
+  
+  for (int i = 1; i < size; i++)
   {
-    return 0;
+    if (smallValue > array[i] )
+    {
+      smallValue = array[i];
+    }
   }
-  for (int i = 0; i < size; i++)
+  printf("SmallValue = %d \n", smallValue);
+  int smallSecondValue = array[0];
+
+  for (int i = 1; i < size; i++)
   {
-    (array[i]) > (array[i + 1]) ? (temp_data = temp_data + array[i]) : (temp_data = temp_data + array[i + 1]);
+    if (smallSecondValue > array[i])
+    {
+      if (smallSecondValue != smallValue)
+      {
+        smallSecondValue = array[i];
+      }
+    }
   }
-  return temp_data;
+  printf("SmallSecondValue = %d\n", smallValue);
 }

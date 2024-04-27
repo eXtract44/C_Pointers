@@ -1,10 +1,10 @@
 #include <stdio.h>
+#include "array.h"
 
-
+#define ar_size 5
 int main() {
-	int a = 10;
-	int b = 20;
-	printf("Initial values: a = %d, b = %d\n", a, b);
-
+	int ar[ar_size] = {1,2,-32,4,-10};
+    findSecondSmallValue(ar, ar_size);
+	//printf("SecondSmallValue = %d", print_value);
 	return 0;
 }
