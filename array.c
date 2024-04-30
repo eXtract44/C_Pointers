@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+/*
 int sumArray(int *array, int size)
 {
   int sum = 0;
@@ -124,29 +124,24 @@ void reverseArrayRecursive(char *arr, int size)
     reverseArrayRecursive(arr + 1, size - 2);
   }
 }
+*/
 void findSecondSmallValue(int *array, int size)
 {
-  int smallValue = array[0];
-  
-  for (int i = 1; i < size; i++)
-  {
-    if (smallValue > array[i] )
+    int min1 = array[0];
+    int min2 = array[0];
+    for (int i = 1; i < size; i++)
     {
-      smallValue = array[i];
-    }
-  }
-  printf("SmallValue = %d \n", smallValue);
-  int smallSecondValue = array[0];
+        if (array[i] < min1)
+        {
+            min2 = min1;
+            min1 = array[i];
+        }
+        else if (array[i] < min2)
+        {
+            min2 = array[i];
+        }
 
-  for (int i = 1; i < size; i++)
-  {
-    if (smallSecondValue > array[i])
-    {
-      if (smallSecondValue != smallValue)
-      {
-        smallSecondValue = array[i];
-      }
     }
-  }
-  printf("SmallSecondValue = %d\n", smallValue);
+      printf("SmallValue = %d \n", min1);
+      printf("SmallSecondValue = %d\n", min2);
 }

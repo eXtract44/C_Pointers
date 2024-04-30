@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "u:/MediaE/Hobby/Udemy/MasterC/C_Pointers",
-      "program": "u:/MediaE/Hobby/Udemy/MasterC/C_Pointers/build/Debug/outDebug",
+      "cwd": "d:/Lernen/Udemy/C_Pointer/C_Pointers",
+      "program": "d:/Lernen/Udemy/C_Pointer/C_Pointers/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

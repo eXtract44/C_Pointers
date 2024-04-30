@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Include the prototypes of your swap functions here
-void swapInts(int* a, int* b);
+/*void swapInts(int* a, int* b);
 void swapIntsNoThird1(int* a, int* b);
 void swapIntsNoThird2(int* a, int* b);
 void genericSwap(void* a, void* b, int size);
@@ -27,4 +27,4 @@ void genericSwap(void* a, void* b, int size)
 	memcpy(tempMemory, a, size);
 	memcpy(a, b, size);
 	memcpy(b, tempMemory, size);
-}
+}*/

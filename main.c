@@ -1,4 +1,4 @@
-#include <stdio.h>
+
 #include "array.h"
 
 #define ar_size 5
