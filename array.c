@@ -124,7 +124,6 @@ void reverseArrayRecursive(char *arr, int size)
     reverseArrayRecursive(arr + 1, size - 2);
   }
 }
-*/
 void findSecondSmallValue(int *array, int size)
 {
     int min1 = array[0];
@@ -144,4 +143,42 @@ void findSecondSmallValue(int *array, int size)
     }
       printf("SmallValue = %d \n", min1);
       printf("SmallSecondValue = %d\n", min2);
+}
+
+int findSumfromValue(int *array, int size, int value, int *index1, int *index2)
+{
+    //int temp = 0;
+    for (int i = 0; i < size; i++) //ar 0 1 2 3
+    {
+        for (int j = 1; j < i; j++)
+        {
+
+            if (array[i] + array[j] == value)
+            {
+                *index1 = i;
+                *index2 = j;
+                return 1;
+            }
+        }
+    }
+    *index1 = 0;
+    *index2 = 0;
+    return 0;
+    //if 2 elements return 1 and pass their indexes,else return 0 indexes to 0
+    //printf("SmallValue = %d \n", min1);
+    //printf("SmallSecondValue = %d\n", min2);
+}*/
+int ifPolindrome(int *array, int size)
+{
+    int pass = 0;
+    for (int i = 0; i < size/2; i++) //ar 1 2 2 1
+    {
+        if (array[i] == array[size-1 - i]) // 1 == 1
+            pass = 1;
+        else
+        {
+            return 0;
+        }
+    }
+    return pass;
 }
