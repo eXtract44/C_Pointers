@@ -167,7 +167,7 @@ int findSumfromValue(int *array, int size, int value, int *index1, int *index2)
     //if 2 elements return 1 and pass their indexes,else return 0 indexes to 0
     //printf("SmallValue = %d \n", min1);
     //printf("SmallSecondValue = %d\n", min2);
-}*/
+}
 void ifPolindromeIter(char *array, int size)
 {
     //int pass = 0;
@@ -188,11 +188,10 @@ void ifPolindromeRecursive(char *array, int size)
 {
     if (size > 1)
     {
-        if (array[0] == array[size-1]) //{'A','B!','C'||||||'C','B','A'};
+        if (array[0] == array[size - 1]) //{'A','B!','C'||||||'C','B','A'};
         {
-          printf("SIZE PASSED!!! \n");
-            ifPolindromeRecursive(array+1, size - 2);
-
+            printf("SIZE PASSED!!! \n");
+            ifPolindromeRecursive(array + 1, size - 2);
         }
         else
             printf("NOT PASSED \n");
@@ -200,10 +199,56 @@ void ifPolindromeRecursive(char *array, int size)
     }
     else
     {
-
         printf("PASSED!!! \n");
     }
+}
+void ifSignedUnsignedRecursive(int *array, int size)
+{
+    if (size > 1)
+    {
+        if (array[size - 1] > 0) //unsigned
+        {
+            if (array[size - 2] < 0)
+            {
+              printf("PASSED!!! \n");
+                ifSignedUnsignedRecursive(array, size - 2);
+            }
+            else
+            {
+                printf("NOT PASSED \n");
+                return;
+            }
+        }
+        else //signed
+        {
+            if (array[size - 2] > 0)
+            {
+                printf("PASSED!!! \n");
+                ifSignedUnsignedRecursive(array, size - 2);
+            }
+            else
+            {
+                printf("NOT PASSED \n");
+                return;
+            }
+        }
+    }
+}
+*/
+void ifSignedUnsignedRecursiveBest(int *array, int size)
+{
+    if (size > 1)
+    {
+        if (array[size - 1] * array[size - 2] >= 0) //unsigned
+        {
+              printf("NOT PASSED \n");
 
-
-    //return pass;
+            }
+            else
+            {
+              ifSignedUnsignedRecursiveBest(array, size - 2);
+                printf("PASSED \n");
+                return;
+            }
+        }
 }
