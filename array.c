@@ -168,17 +168,42 @@ int findSumfromValue(int *array, int size, int value, int *index1, int *index2)
     //printf("SmallValue = %d \n", min1);
     //printf("SmallSecondValue = %d\n", min2);
 }*/
-int ifPolindrome(int *array, int size)
+void ifPolindromeIter(char *array, int size)
 {
-    int pass = 0;
-    for (int i = 0; i < size/2; i++) //ar 1 2 2 1
+    //int pass = 0;
+    for (int i = 0; i < size / 2; i++) //ar 1 2 2 1
     {
-        if (array[i] == array[size-1 - i]) // 1 == 1
-            pass = 1;
-        else
-        {
-            return 0;
+        //printf("*****************i %d \n", i);
+        //printf("ar i %d \n", array[i]);
+        //printf("ar i+1 %d \n", array[size - 1 - i]);
+        if (array[i] != array[size - 1 - i])
+        { // 1 == 1
+            printf("NOT PASSED \n");
+            return;
         }
     }
-    return pass;
+    printf("PASSED!!! \n");
+}
+void ifPolindromeRecursive(char *array, int size)
+{
+    if (size > 1)
+    {
+        if (array[0] == array[size-1]) //{'A','B!','C'||||||'C','B','A'};
+        {
+          printf("SIZE PASSED!!! \n");
+            ifPolindromeRecursive(array+1, size - 2);
+
+        }
+        else
+            printf("NOT PASSED \n");
+        return;
+    }
+    else
+    {
+
+        printf("PASSED!!! \n");
+    }
+
+
+    //return pass;
 }

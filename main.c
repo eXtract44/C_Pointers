@@ -4,11 +4,12 @@
 #include "array.h"
 
 
-#define ar_size 10
+#define ar_size 6
 int main() {
-	int ar[ar_size] = {1,2,2,1};
+	char ar[ar_size] = {'A','B','C','C','B','A'};
 
-	printf("func = %d \n", ifPolindrome(ar,ar_size));
+	//printf("func = %d \n", ifPolindrome(ar,ar_size));
+	ifPolindromeRecursive(ar,ar_size);
 	return 0;
 
 
