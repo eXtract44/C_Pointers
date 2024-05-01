@@ -6,10 +6,10 @@
 
 #define ar_size 6
 int main() {
-	int ar[ar_size] = {1,-1,1,-1,1,1};
+	int ar[ar_size] = {2,40,5,18,1,55};
 
 	//printf("func = %d \n", ifPolindrome(ar,ar_size));
-	ifSignedUnsignedRecursiveBest(ar,ar_size);
+	maxNaighborsValueRecursive(ar,ar_size);
 	return 0;
 
 

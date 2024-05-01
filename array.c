@@ -241,14 +241,28 @@ void ifSignedUnsignedRecursiveBest(int *array, int size)
     {
         if (array[size - 1] * array[size - 2] >= 0) //unsigned
         {
-              printf("NOT PASSED \n");
-
-            }
-            else
-            {
-              ifSignedUnsignedRecursiveBest(array, size - 2);
-                printf("PASSED \n");
-                return;
-            }
+            printf("NOT PASSED \n");
         }
+        else
+        {
+            ifSignedUnsignedRecursiveBest(array, size - 2);
+            printf("PASSED \n");
+            return;
+        }
+    }
+}
+void maxNaighborsValueRecursive(int *array, int size)
+{
+    static int max_value = 0;
+    if (size > 1)
+    {
+
+        if (array[size - 1] + array[size - 2] > max_value)
+        {
+            max_value = array[size - 2] + array[size - 3];
+
+        }
+        maxNaighborsValueRecursive(array, size-1);
+        printf("max_value = %d\n", max_value);
+    }
 }
