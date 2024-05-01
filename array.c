@@ -202,8 +202,7 @@ void ifPolindromeRecursive(char *array, int size)
         printf("PASSED!!! \n");
     }
 }
-void ifSignedUnsignedRecursive(int *array, int size)
-{
+void ifSignedUnsignedRecursive(int *array, int size){
     if (size > 1)
     {
         if (array[size - 1] > 0) //unsigned
@@ -234,7 +233,6 @@ void ifSignedUnsignedRecursive(int *array, int size)
         }
     }
 }
-*/
 void ifSignedUnsignedRecursiveBest(int *array, int size)
 {
     if (size > 1)
@@ -251,18 +249,56 @@ void ifSignedUnsignedRecursiveBest(int *array, int size)
         }
     }
 }
-void maxNaighborsValueRecursive(int *array, int size)
+int maxAdjacentSum(int *array, int size)
 {
-    static int max_value = 0;
-    if (size > 1)
+    int cur_sum_max, cur_sum;
+    if (size == 2)
     {
-
-        if (array[size - 1] + array[size - 2] > max_value)
-        {
-            max_value = array[size - 2] + array[size - 3];
-
-        }
-        maxNaighborsValueRecursive(array, size-1);
-        printf("max_value = %d\n", max_value);
+        return array[0] + array[1];
     }
+    cur_sum = array[0] + array[1];
+    cur_sum_max = maxAdjacentSum(array + 1, size - 1);
+    if (cur_sum > cur_sum_max)
+        return cur_sum;
+    else
+        return cur_sum_max;
+}
+void print_array_left(int *array, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d", array[i]);
+    }
+}
+void print_array_right(int *array, int size)
+{
+    for (int j = size; j > 0; j--)
+    {
+        printf("%d", array[j - 1]);
+    }
+}
+void print_array_left_recursive(int *array, int size)
+{
+
+    if (size > 0)
+    {
+        printf("%d", array[0]);
+        print_array_left_recursive(array + 1, size - 1);
+    }
+}
+void print_array_right_recursive(int *array, int size)
+{
+
+    if (size > 0)
+    {
+        printf("%d", array[size-1]);
+        print_array_left_recursive(array, size - 1);
+    }
+}
+*/
+int avarageArray(int* ar,int size){
+  double avarage = 0;
+ if(size > 1){
+avarage = avarage + avarageArray(ar+1,size-1) / 2;
+ } 
 }

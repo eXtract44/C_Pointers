@@ -4,12 +4,14 @@
 #include "array.h"
 
 
-#define ar_size 6
+#define ar_size 5
 int main() {
-	int ar[ar_size] = {2,40,5,18,1,55};
+	int ar[ar_size] = {1,2,3,4,5};
 
-	//printf("func = %d \n", ifPolindrome(ar,ar_size));
-	maxNaighborsValueRecursive(ar,ar_size);
+	printf("func = %d \n",avarageArray(ar,ar_size));
+	
+	//printf("******* \n");
+	//print_array_right_recursive(ar,ar_size);
 	return 0;
 
 
