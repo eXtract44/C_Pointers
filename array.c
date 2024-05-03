@@ -295,7 +295,6 @@ void print_array_right_recursive(int *array, int size)
         print_array_left_recursive(array, size - 1);
     }
 }
-*/
 float avarageArrayIter(int *arr, int size)
 {
     float avarage = 0;
@@ -305,3 +304,23 @@ float avarageArrayIter(int *arr, int size)
     }
     return avarage / (float)size;
 }
+float avarageArrayRecursive(int *arr, int size)
+{
+   float avarage = 0;
+    if (size == 1)
+    {
+        return arr[0];
+    }
+    avarage =  avarageArrayRecursive(arr + 1, size - 1);
+    return (avarage * (size-1) + arr[0]) / size;
+}
+void avarageArrayRecursivePrint(int *arr, int size)
+{
+    static float avarage = 0;
+    if (size > 0)
+    {
+        avarage += (float)arr[0];
+        printf("value = %f",avarage);
+        avarageArrayRecursivePrint(arr + 1, size - 1);
+    }
+}*/
