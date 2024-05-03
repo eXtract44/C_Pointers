@@ -296,9 +296,12 @@ void print_array_right_recursive(int *array, int size)
     }
 }
 */
-int avarageArray(int* ar,int size){
-  double avarage = 0;
- if(size > 1){
-avarage = avarage + avarageArray(ar+1,size-1) / 2;
- } 
+float avarageArrayIter(int *arr, int size)
+{
+    float avarage = 0;
+    for (int i = 0; i < size; i++)
+    {
+        avarage += (float)arr[i];
+    }
+    return avarage / (float)size;
 }
