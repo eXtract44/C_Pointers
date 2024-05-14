@@ -295,10 +295,46 @@ void print_array_right_recursive(int *array, int size)
         print_array_left_recursive(array, size - 1);
     }
 }
-*/
-int avarageArray(int* ar,int size){
-  double avarage = 0;
- if(size > 1){
-avarage = avarage + avarageArray(ar+1,size-1) / 2;
- } 
+float avarageArrayIter(int *arr, int size)
+{
+    float avarage = 0;
+    for (int i = 0; i < size; i++)
+    {
+        avarage += (float)arr[i];
+    }
+    return avarage / (float)size;
 }
+float avarageArrayRecursive(int *arr, int size)
+{
+   float avarage = 0;
+    if (size == 1)
+    {
+        return arr[0];
+    }
+    avarage =  avarageArrayRecursive(arr + 1, size - 1);
+    return (avarage * (size-1) + arr[0]) / size;
+}
+void avarageArrayRecursivePrint(int *arr, int size)
+{
+    static float avarage = 0;
+    if (size > 0)
+    {
+        avarage += (float)arr[0];
+        printf("value = %f",avarage);
+        avarageArrayRecursivePrint(arr + 1, size - 1);
+    }
+}
+void printBinary()
+{
+       int decimal_num, binary_num = 0, i = 1, remainder;
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal_num);
+    while (decimal_num != 0) {
+        remainder = decimal_num % 2;
+        decimal_num /= 2;
+        binary_num += remainder * i;
+        i *= 10;
+    }
+    printf("Binary number: %d\n", binary_num);
+}
+*/
