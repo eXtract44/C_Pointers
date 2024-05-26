@@ -1,10 +1,15 @@
 
 #include <stdio.h>
-#include "dma.h"
+#include <stdlib.h>
+
 
 int main() {
-	//printf("func = %f \n",avarageArrayRecursive(ar,ar_size));
-double* dynAr ;
-dynAr = createDymanicArray();
+char str[] = "Hello";
+	
+ printf("OldString = %s\n", str);
+
+ char* ptr  = strConCat(str);
+  printf("NewString = %s\n", ptr);
+//free(ptr);
 	return 0;
 }
